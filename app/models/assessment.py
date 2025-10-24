@@ -21,6 +21,12 @@ class DimScore(BaseModel):
     score: int  # 0..100
     raw: int    # 1..5
 
+# Representa uma recomendação gerada para o usuário.
+# Cada recomendação tem uma tag e um texto descritivo.
+class Recommendation(BaseModel):
+    tag: str
+    text: str
+
 # Modelo de saída retornado pela API.
 # Inclui dados agregados do teste e suas dimensões calculadas.
 class AssessmentOut(BaseModel):
@@ -29,6 +35,7 @@ class AssessmentOut(BaseModel):
     percent: int
     level: Literal["baixo", "moderado", "alto"]
     dims: List[DimScore]
+    recommendations: list[Recommendation] | None = None
 
 # Função que processa as respostas e calcula os resultados do teste.
 # Converte cada resposta (1..5) em um score percentual (0..100),

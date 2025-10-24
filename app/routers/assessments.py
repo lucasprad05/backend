@@ -7,6 +7,8 @@ from app.core.security import get_current_active_user
 from app.models.assessment import AssessmentIn, AssessmentOut, compute_assessment
 from app.db.memory import DB_ASSESSMENTS
 
+from app.core.gemini import generate_recommendations
+
 # Define o router principal responsável pelas rotas de avaliações (assessments).
 # Prefixo comum: /assessments
 router = APIRouter(prefix="/assessments", tags=["assessments"])
@@ -15,7 +17,7 @@ router = APIRouter(prefix="/assessments", tags=["assessments"])
 # - Recebe as respostas (AssessmentIn)
 # - Calcula o resultado via compute_assessment
 # - Armazena o registro em memória
-# - Retorna o objeto formatado conforme AssessmentOut
+# - Retorna o objeto formatado conforme AssessmentOut, incluindo recomendações geradas pelo Gemini.
 @router.post("", response_model=AssessmentOut)
 def create_assessment(
     payload: AssessmentIn,
@@ -32,6 +34,9 @@ def create_assessment(
         "dims": [d.model_dump() for d in dims],
     }
 
+    # Gera recomendações usando o Gemini AI
+    rec["recommendations"] = generate_recommendations(percent, level, rec["dims"])
+  
     DB_ASSESSMENTS.setdefault(user_id, []).append(rec)
     return AssessmentOut(**rec)
 
