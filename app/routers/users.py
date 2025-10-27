@@ -3,7 +3,7 @@ from typing import Annotated
 from pydantic import BaseModel, EmailStr
 from app.models.user import UserBase
 from app.core.security import get_current_active_user
-from app.db.memory import DB_USERS, DB_EMAIL_INDEX, get_user_by_email, pwd_hasher
+from app.db.memory import DB_USERS, DB_EMAIL_INDEX, delete_user_record, get_user_by_email, pwd_hasher
 
 # Router com operações relacionadas ao usuário autenticado (/users).
 router = APIRouter(prefix="/users", tags=["users"])
@@ -57,5 +57,15 @@ def update_password(payload: PasswordUpdate, current_user: Annotated[dict, Depen
 
     current_user["hashed_password"] = pwd_hasher.hash(payload.new_password)
     DB_USERS[current_user["id"]] = current_user
+
+    return {"ok": True}
+
+# Deleta a conta do usuário autenticado.
+# - Remove do DB_USERS e DB_EMAIL_INDEX
+@router.delete("/me")
+def delete_account(current_user: Annotated[dict, Depends(get_current_active_user)]):
+    user_id = current_user["id"]
+    if not delete_user_record(user_id):
+        raise HTTPException(status_code=404, detail="Usuário não encontrado")
 
     return {"ok": True}

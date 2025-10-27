@@ -51,6 +51,20 @@ def create_user_record(name: str, email: str, password: str) -> dict:
     }
     return DB_USERS[user_id]
 
+# Função para exclusão do usuário e seus dados associados
+def delete_user_record(user_id: str) -> bool:
+    user = DB_USERS.pop(user_id, None)
+    if user is None:
+        return False
+
+    # Remove do índice de e-mail
+    email = user["email"]
+    DB_EMAIL_INDEX.pop(email, None)
+
+    # Remove avaliações associadas
+    DB_ASSESSMENTS.pop(user_id, None)
+
+    return True
 
 # Cria (ou mantém) um usuário administrador padrão
 # Função chamada no startup da aplicação para garantir acesso administrativo inicial
