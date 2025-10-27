@@ -34,7 +34,7 @@ Swagger UI: http://localhost:8000/docs
 - PUT /users/me/password → Atualiza a senha (verifica senha anterior).
 - DELETE /users/me → Exclui permanentemente a conta do usuário.
 
-/assessments — Avaliações de Estresse
+#/assessments — Avaliações de Estresse
 - POST /assessments → Cria uma nova avaliação, calcula o nível de estresse e gera recomendações com a API Gemini.
 - GET /assessments/me → Lista todas as avaliações do usuário autenticado (ordem decrescente de data).
 
