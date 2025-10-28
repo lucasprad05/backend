@@ -2,7 +2,7 @@
 
 Backend do **StressAI**, uma aplicação que avalia o nível de estresse de estudantes com base em um questionário interativo e fornece recomendações personalizadas.
 
-## Link do repositório Frontend
+## Link do repositório Frontend - AMBOS UTILIZAR BRANCH MAIN
 https://github.com/lucasprad05/Web-Based-Stres-Screening-System-with-Artificial-Intelligence
 
 Informações sobre Autenticação e Autorização são explicadas no repositório do front-end, porém a implementação está dentro da pasta <strong>app/core/security.py</strong>
