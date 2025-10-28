@@ -23,6 +23,8 @@ A documentação automática estará disponível em:
 
 Swagger UI: http://localhost:8000/docs
 
+<strong>O Backend deve ser rodado antes do frontend</strong>
+
 ## 📂 Estrutura de Rotas
 #/auth — Autenticação e Registro
 - POST /auth/register → Cria um novo usuário (valida duplicidade de e-mail).
