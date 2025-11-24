@@ -8,3 +8,4 @@ python-dotenv
 sqlmodel
 sqlalchemy
 passlib[argon2]
+email-validator
