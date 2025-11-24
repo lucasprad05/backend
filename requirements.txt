@@ -9,3 +9,4 @@ sqlmodel
 sqlalchemy
 passlib[argon2]
 email-validator
+google-generativeai
