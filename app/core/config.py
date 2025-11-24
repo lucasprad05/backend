@@ -1,6 +1,6 @@
 # Chave secreta usada para assinar e validar os tokens JWT
 # É essencial substituí-la por uma chave longa, aleatória e segura em produção
-SECRET_KEY = "troque-esta-chave-por-uma-bem-grande-e-secreta"
+SECRET_KEY = "adwa2eqeqeqeqe2e"
 
 # Algoritmo criptográfico usado na geração e validação dos tokens JWT
 # O HS256 (HMAC-SHA256) é um algoritmo simétrico amplamente utilizado
