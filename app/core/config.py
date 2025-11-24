@@ -12,4 +12,4 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 15
 
 # Lista de origens permitidas para requisições CORS
 # Aqui está configurada para permitir o frontend local em Vite (porta padrão 5173)
-CORS_ORIGINS = ["http://localhost:5173"]
+CORS_ORIGINS = ["https://web-based-stres-screening-system-wi.vercel.app"]
