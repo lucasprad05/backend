@@ -5,3 +5,6 @@ python-jose[cryptography]
 pydantic
 pwdlib[argon2]
 python-dotenv
+sqlmodel
+sqlalchemy
+passlib[argon2]

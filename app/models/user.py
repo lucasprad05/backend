@@ -1,24 +1,42 @@
-from typing import List
 from pydantic import BaseModel, EmailStr
+from typing import Optional, List
 
-# Modelo base de usuário usado em respostas e consultas internas.
-# Contém as informações essenciais de identificação e permissão.
+
+# BASE PARA LEITURA
 class UserBase(BaseModel):
-    id: str
+    id: int
     name: str
     email: EmailStr
     disabled: bool = False
     scopes: List[str] = []
 
-# Modelo usado na criação de novos usuários.
-# Inclui senha em texto simples, que será posteriormente hasheada.
+    # transforma a lista vinda do SQLModel (CSV ou JSON) em list[str]
+    @classmethod
+    def from_sql(cls, user):
+        raw = user.scopes
+        if isinstance(raw, list):
+            scopes = raw
+        elif "," in raw:
+            scopes = raw.split(",")
+        else:
+            scopes = [raw] if raw else []
+        return cls(
+            id=user.id,
+            name=user.name,
+            email=user.email,
+            disabled=user.disabled,
+            scopes=scopes
+        )
+
+
+# CRIAÇÃO DE USUÁRIO (POST /register)
 class UserCreate(BaseModel):
     name: str
     email: EmailStr
     password: str
 
-# Modelo usado para representar o token JWT retornado após login.
-# Indica o tipo do token (geralmente "bearer") e o valor codificado.
+
+# TOKEN JWT
 class Token(BaseModel):
     access_token: str
     token_type: str
