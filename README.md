@@ -7,9 +7,12 @@ https://github.com/lucasprad05/Web-Based-Stres-Screening-System-with-Artificial-
 
 Informações sobre Autenticação e Autorização são explicadas no repositório do front-end, porém a implementação está dentro da pasta <strong>app/core/security.py</strong>
 
-## Hospedagem
+## Hospedagem do Back-End + BD
 - Está hospedado em https://backend-n7az.onrender.com/
 Pela plataforma Render em assinatura paga
+
+## Hospedagem do Front-End
+- https://web-based-stres-screening-system-wi.vercel.app/ utilizando a plataforma Vercel
 
 ## Como Rodar o Projeto Localmente
 
