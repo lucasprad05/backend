@@ -50,6 +50,7 @@ Essas sugestões são incluídas automaticamente na resposta de cada avaliação
 - Pydantic — Validação de modelos
 - JWT (OAuth2) — Autenticação e autorização
 - Gemini API — Geração de recomendações com IA
+- Biblioteca SQLModel + SQLLite
 - Uvicorn — Servidor ASGI
 - Python
 
