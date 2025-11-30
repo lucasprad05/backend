@@ -11,6 +11,10 @@ Informações sobre Autenticação e Autorização são explicadas no repositór
 - Está hospedado em https://backend-n7az.onrender.com/
 Pela plataforma Render em assinatura paga
 
+A documentação automática estará disponível em:
+
+Swagger UI: https://backend-n7az.onrender.com/docs
+
 ## Hospedagem do Front-End
 - https://web-based-stres-screening-system-wi.vercel.app/ utilizando a plataforma Vercel
 
@@ -25,10 +29,6 @@ pip install -r requirements.txt
 ```bash
 uvicorn app.main:app --reload
 ```
-O servidor será iniciado em http://localhost:8000
-A documentação automática estará disponível em:
-
-Swagger UI: http://localhost:8000/docs
 
 <strong>O Backend deve ser rodado antes do frontend</strong>
 
