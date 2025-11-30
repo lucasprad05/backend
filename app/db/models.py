@@ -11,7 +11,7 @@ class UserModel(SQLModel, table=True):
     email: str = Field(index=True, unique=True)
     hashed_password: str
     disabled: bool = Field(default=False)
-    scopes: str  # armazenaremos lista JSON ou CSV (depois decidimos)
+    scopes: str
 
     assessments: List["AssessmentModel"] = Relationship(back_populates="user")
 
@@ -25,7 +25,7 @@ class AssessmentModel(SQLModel, table=True):
 
     percent: float
     level: str
-    recommendations: str  # JSON string
+    recommendations: str
 
     # guardamos dims (dimensões calculadas) como JSON string
     dims: str
