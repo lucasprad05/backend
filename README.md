@@ -54,6 +54,10 @@ Essas sugestões são incluídas automaticamente na resposta de cada avaliação
 - Uvicorn — Servidor ASGI
 - Python
 
+## Hospedagem
+- Está hospedado em https://backend-n7az.onrender.com/
+Pela plataforma Render em assinatura paga
+
 ## Fluxo Geral
 - Registro de usuário (/auth/register)
 - Login e geração de token (/auth/token)
