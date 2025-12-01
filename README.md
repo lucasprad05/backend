@@ -19,7 +19,7 @@ Swagger UI: https://backend-n7az.onrender.com/docs
 - https://web-based-stres-screening-system-wi.vercel.app/ utilizando a plataforma Vercel
 
 ## Link do vídeo de funcionamento da aplicação
-https://youtu.be/K8nceZossyI
+https://www.youtube.com/watch?v=K8nceZossyI
 
 ## Como Rodar o Projeto Localmente
 
