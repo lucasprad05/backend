@@ -18,6 +18,9 @@ Swagger UI: https://backend-n7az.onrender.com/docs
 ## Hospedagem do Front-End
 - https://web-based-stres-screening-system-wi.vercel.app/ utilizando a plataforma Vercel
 
+## Link do vídeo de funcionamento da aplicação
+https://youtu.be/K8nceZossyI
+
 ## Como Rodar o Projeto Localmente
 
  - Instalar dependências
